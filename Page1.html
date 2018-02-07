@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Forms Demo</title>
+    <script src="moment.js"></script>
+    <script src="Script2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="my-4">
+            <h2 class="pb-2">Beverage Order</h2>
+            <form>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-3 col-form-label">Customer Name</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="name" placeholder="First name" required class="form-control">
+                    </div>
+                </div>
+            </form>
+
+            <div class="my-4">
+                <form>
+                    <div class="form-group row">
+                        <label for="inputBeverage" class="col-sm-2 col-form-label">Beverage type</label>
+                        <div class="col-3">
+                            <select class="form-control" id="drinkselector" onclick="toggleDisplay()">
+                                <option value="0">Tea</option>
+                                <option value="1">Coffee</option>
+                                <option value="2">Wine</option>
+                                <option value="3">Beer</option>
+                            </select>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="size" value="1"> Small
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="size" value="1.5"> Medium
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="size" value="2" checked> Large
+                        </div>
+                        <label for="inputQuantity" class="col-sm-1 col-form-label">Quantity</label>
+                        <div class="col-sm-2">
+                            <input type="number" id="quantity" placeholder="Value" required class="form-control" />
+                        </div>
+
+                    </div>
+
+                </form>
+                <div id="selectedsize"></div>
+                <div id="selecteddrink"></div>
+
+            </div>
+            <div class="my-4">
+                <form>
+                    <div class="form-group row" id="hiddenQuery" style="visibility:hidden">
+                        <label for="inputAge" class="col-sm-1 col-form-label">Birth Date</label>
+                        <div class="col-sm-3">
+                            <input type="text" id="age" placeholder="MM/DD/YYYY" required class="form-control" />
+                        </div>
+                    </div>
+                </form>
+                <button type="button" id="submitorder" class="btn btn-info">Submit order</button>
+            </div>
+            
+            <div class="hidden" id="receipt"></div>
+</body>
+</html>
